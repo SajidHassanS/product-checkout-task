@@ -1,4 +1,6 @@
+ 
 import { useCart } from "../../context/CartContext";
+import Button from "../Button/Button";
 
 const Checkout = () => {
   const { cartItems, clearCart } = useCart();
@@ -7,13 +9,14 @@ const Checkout = () => {
 
   const handlePayment = () => {
     alert("Payment successful!");
-    clearCart();
+    clearCart();  
   };
 
   return (
     <div className="bg-taskWhite p-4">
       <div className="md:max-w-5xl max-w-xl mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+         
           <div className="lg:col-span-2 max-md:order-1">
             <h2 className="text-3xl font-extrabold text-gray-800">
               Make a payment
@@ -52,18 +55,17 @@ const Checkout = () => {
                 </div>
               </div>
 
-              <button
-                onClick={handlePayment}
-                className="mt-8 w-40 py-3.5 text-sm text-taskWhite rounded-md   tracking-wide
-                
-                bg-taskPrimary hover:bg-indigo-600
-                "
-              >
-                Pay ${totalAmount.toFixed(2)}
-              </button>
+
+              <Button
+           onClick={handlePayment}
+          className="mt-4 bg-taskPrimary text-taskWhite py-2 px-4 rounded hover:bg-taskPrimary"
+          label={ `Pay ${totalAmount.toFixed(2)}`}
+        />
+             
             </form>
           </div>
 
+     
           <div className="bg-gray-100 p-6 rounded-md">
             <h2 className="text-3xl font-extrabold text-gray-800">
               ${totalAmount.toFixed(2)}
