@@ -1,4 +1,3 @@
-import React from "react";
 import { useCart } from "../../context/CartContext";
 
 const Checkout = () => {
@@ -8,14 +7,13 @@ const Checkout = () => {
 
   const handlePayment = () => {
     alert("Payment successful!");
-    clearCart(); // Clear cart after payment
+    clearCart();
   };
 
   return (
-    <div className="font-[sans-serif] bg-white p-4">
+    <div className="bg-taskWhite p-4">
       <div className="md:max-w-5xl max-w-xl mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Payment Form */}
           <div className="lg:col-span-2 max-md:order-1">
             <h2 className="text-3xl font-extrabold text-gray-800">
               Make a payment
@@ -56,9 +54,9 @@ const Checkout = () => {
 
               <button
                 onClick={handlePayment}
-                className="mt-8 w-40 py-3.5 text-sm   text-white rounded-md   tracking-wide
+                className="mt-8 w-40 py-3.5 text-sm text-taskWhite rounded-md   tracking-wide
                 
-                bg-indigo-500   hover:bg-indigo-600
+                bg-taskPrimary hover:bg-indigo-600
                 "
               >
                 Pay ${totalAmount.toFixed(2)}
@@ -66,7 +64,6 @@ const Checkout = () => {
             </form>
           </div>
 
-          {/* Order Summary */}
           <div className="bg-gray-100 p-6 rounded-md">
             <h2 className="text-3xl font-extrabold text-gray-800">
               ${totalAmount.toFixed(2)}
